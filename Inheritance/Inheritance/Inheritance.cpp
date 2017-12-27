@@ -14,7 +14,7 @@ class B : public A
 {
 protected:
 	int b_pr;
-public:
+public: 
 	int b_pub;
 };
 
