@@ -15,6 +15,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CtorsAndDtors", "CtorsAndDt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceExample", "InheritanceExample\InheritanceExample.vcxproj", "{3C1EE714-EE8A-49E3-A22F-6D3A1759B907}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Using pointer on method in derived class", "Using pointer on method in derived class\Using pointer on method in derived class.vcxproj", "{CC109338-FC68-4E04-98E3-27CCED177ACF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CtorsAnd Dtors 2", "CtorsAnd Dtors 2\CtorsAnd Dtors 2.vcxproj", "{5FC947AF-9EBC-4F4F-9442-D251B89A988C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +75,22 @@ Global
 		{3C1EE714-EE8A-49E3-A22F-6D3A1759B907}.Release|x64.Build.0 = Release|x64
 		{3C1EE714-EE8A-49E3-A22F-6D3A1759B907}.Release|x86.ActiveCfg = Release|Win32
 		{3C1EE714-EE8A-49E3-A22F-6D3A1759B907}.Release|x86.Build.0 = Release|Win32
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Debug|x64.ActiveCfg = Debug|x64
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Debug|x64.Build.0 = Debug|x64
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Debug|x86.ActiveCfg = Debug|Win32
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Debug|x86.Build.0 = Debug|Win32
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Release|x64.ActiveCfg = Release|x64
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Release|x64.Build.0 = Release|x64
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Release|x86.ActiveCfg = Release|Win32
+		{CC109338-FC68-4E04-98E3-27CCED177ACF}.Release|x86.Build.0 = Release|Win32
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Debug|x64.ActiveCfg = Debug|x64
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Debug|x64.Build.0 = Debug|x64
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Debug|x86.ActiveCfg = Debug|Win32
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Debug|x86.Build.0 = Debug|Win32
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Release|x64.ActiveCfg = Release|x64
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Release|x64.Build.0 = Release|x64
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Release|x86.ActiveCfg = Release|Win32
+		{5FC947AF-9EBC-4F4F-9442-D251B89A988C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
