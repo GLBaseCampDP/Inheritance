@@ -8,47 +8,40 @@ class Point {
 	//чатку фігури
 	int x, y;
 	public:
-		void setPoint(int x, int y) { setX(x); setY(y); }
-		int getX() { return x; }
-		int getY() { return y; }
-		int setX(int x) { this->x = x; }
-		int setY(int y) { this->y = y; }
-		Point() { setPoint(0, 0); }
+		void init(int x, int y) {atX() = x;  atY() = y; }
+		int& atX() { return x; }
+		int& atY() { return y; }	
+		Point() { init(0, 0); }
+		Point(Point& p) { init(p.atX(), p.atY() ); }
+
 };
 
-class Circle : public Point
-{
+class Circle : public Point {
+	double r;
 public:
-	double radius;
-	void setRadius(double r) { radius = (radius >= 0) ? radius: -1; }
-	unsigned getRadius() { return radius; }
-	void setCenter (unsigned x, unsigned y) { setPoint(x, y); }
-	Point getCenter() { return *this; }
-	
-	Circle() { setCenter(0, 0);  setRadius(1); }
+	void setR(double rr) { r = (rr >= 0) ? rr : -1; }
+	double getR() { return r; }
+	void init(double r, Point p) {Point::init(p.atX(), p.atY()); setR(r);}
+	Circle() { setR(0); }
+	Circle(Circle& c):Point(c) { setR(0); }
 };
 
-class Rectangle : public Point
-{
-	Point size;
+class Square : public Point {
+	double d;
 	public:
-		void setSize(unsigned x, unsigned y) { setPoint(x, y); }
-		int getWidth() { return size.getX(); }
-		void setWidth(unsigned x) { size.setX(x); }
-		int getHeight() { return size.getY(); }
-		void setHeight(unsigned y) { size.setY(y); }
-
-		void setCenter(unsigned x, unsigned y) { setPoint(x, y); }
-		Point getCenter() { return *this; }
-
-		Rectangle() { setCenter(0, 0);  setSize(0, 0); }
+		void setD(double dd) { d = (dd >= 0) ? dd : -1; }
+		double getD() { return d; }
+		void init(double d, Point p) { Point::init(p.atX(), p.atY()); setD(d); }
+		Square() { setD(0); }
+		Square(Square& c) :Point(c) { setD(0); }
+		
 };
 
 void main() {
-	Rectangle r;
-	r.setCenter(2, 2); r.setSize(5, 6);
+	Square r;
+	r.setD(1); 
 	Circle c;
-	c.setCenter(100, 100);  c.setRadius(1);
+	c.setR(100);
 }
 
 
