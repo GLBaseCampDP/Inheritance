@@ -2,47 +2,48 @@
 //
 
 #include "stdafx.h"
-class Point {
-	//в окремий клас винесено усі спільні харак-
-	//теристики - в даному випадку координати по- 
-	//чатку фігури
-	int x, y;
-	public:
-		void init(int x, int y) {atX() = x;  atY() = y; }
-		int& atX() { return x; }
-		int& atY() { return y; }	
-		Point() { init(0, 0); }
-		Point(Point& p) { init(p.atX(), p.atY() ); }
 
+#define CTORS(DC, BC) DC() { set(0); }\
+  DC(DC& c) : BC(c) { set(0); }
+
+class Point {
+	int x, y;
+protected:
+	void set(Point& p) { x = p.x, y = y; }
+public:
+	Point() : x(0), y(0) {}
+	Point(Point& p) { set(p); }
 };
 
 class Circle : public Point {
 	double r;
 public:
-	void setR(double rr) { r = (rr >= 0) ? rr : -1; }
-	double getR() { return r; }
-	void init(double r, Point p) {Point::init(p.atX(), p.atY()); setR(r);}
-	Circle() { setR(0); }
-	Circle(Circle& c):Point(c) { setR(0); }
+	void set(double R) { r = (R >= 0) ? R : -1; }
+	double get() { return r; }
+	void set(double r, Point p)
+	{
+		Point::set(p); set(r);
+	}
+	CTORS(Circle, Point)
 };
 
 class Square : public Point {
 	double d;
-	public:
-		void setD(double dd) { d = (dd >= 0) ? dd : -1; }
-		double getD() { return d; }
-		void init(double d, Point p) { Point::init(p.atX(), p.atY()); setD(d); }
-		Square() { setD(0); }
-		Square(Square& c) :Point(c) { setD(0); }
-		
+public:
+	void set(double D) { d = (D >= 0) ? D : -1; }
+	double get() { return d; }
+	void set(double d, Point p)
+	{
+		Point::set(p); set(d);
+	}
+	CTORS(Square, Point)
 };
 
 void main() {
-	Square r;
-	r.setD(1); 
-	Circle c;
-	c.setR(100);
+	Square r; r.set(1);
+	Circle c; c.set(100);
 }
+
 
 
 
